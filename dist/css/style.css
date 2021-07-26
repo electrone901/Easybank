@@ -1,4 +1,13 @@
-html {
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {}html {
   font-size: 100%;
   box-sizing: border-box;
 }
@@ -64,6 +73,33 @@ button,
   }
 }
 
+.header.open .overlay {
+  display: block;
+  animation: fade-in 300ms ease-in-out forwards;
+}
+
+.header.open .header__menu > span:first-child {
+  transform: rotate(45deg);
+}
+
+.header.open .header__menu > span:nth-child(2) {
+  opacity: 0;
+}
+
+.header.open .header__menu > span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+.header .overlay {
+  display: none;
+  position: fixed;
+  top: 3.73rem;
+  right: 0px;
+  left: 0px;
+  bottom: 0px;
+  background-image: linear-gradient(#2d314d, transparent);
+}
+
 .header nav {
   padding: 1.0625rem 1.5rem;
 }
@@ -78,10 +114,12 @@ button,
   width: 26px;
   height: 2px;
   background-color: #2d314d;
+  transition: all 300ms ease-in-out;
+  transform-origin: 3px 1px;
 }
 
 .header__menu > span:not(:last-child) {
-  margin-bottom: 3px;
+  margin-bottom: 5px;
 }
 
 .header__links a {
@@ -120,5 +158,10 @@ button,
 .header__cta {
   font-size: 0.875rem;
   color: white;
+  transition: opacity 300ms ease-in-out;
+}
+
+.header__cta:hover {
+  opacity: 0.75;
 }
 /*# sourceMappingURL=style.css.map */
