@@ -65,6 +65,12 @@ body.noscroll {
   overflow: hidden;
 }
 
+h1,
+h2,
+h3 {
+  margin-top: 0;
+}
+
 a,
 a:visited,
 a:hover {
@@ -72,8 +78,12 @@ a:hover {
 }
 
 .container {
-  padding-left: 1.5rem;
+  max-width: 69.375rem;
+  margin: 0 auto;
+  padding-top: 2.25rem;
   padding-right: 1.5rem;
+  padding-bottom: 2.25rem;
+  padding-left: 1.5rem;
 }
 
 .flex {
@@ -94,6 +104,7 @@ a:hover {
 
 button,
 .button {
+  display: inline-block;
   padding: 0.875rem 2.1875rem;
   background: linear-gradient(to right, #31d35c, #2bb7da);
   border-radius: 50px;
@@ -101,6 +112,14 @@ button,
   cursor: pointer;
   color: white;
   font-weight: 400;
+  font-size: 0.875rem;
+  color: white;
+  transition: opacity 300ms ease-in-out;
+}
+
+button:hover,
+.button:hover {
+  opacity: 0.75;
 }
 
 @media (max-width: 63.9375em) {
@@ -213,13 +232,64 @@ button,
   opacity: 1;
 }
 
-.header__cta {
-  font-size: 0.875rem;
-  color: white;
-  transition: opacity 300ms ease-in-out;
+@media (min-width: 64em) {
+  .hero {
+    display: flex;
+    align-items: center;
+  }
 }
 
-.header__cta:hover {
-  opacity: 0.75;
+.hero__image {
+  position: relative;
+  background-image: url("/images/bg-intro-mobile.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-height: 17.5rem;
+}
+
+@media (min-width: 64em) {
+  .hero__image {
+    flex: 3;
+    order: 2;
+    height: 41rem;
+    background-image: url("/images/bg-intro-desktop.svg");
+    background-position: left center;
+  }
+}
+
+.hero__image::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: url("/images/image-mockups.png");
+  background-size: 93%;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+
+.hero__text {
+  text-align: center;
+}
+
+@media (min-width: 64em) {
+  .hero__text {
+    flex: 2;
+    order: 1;
+  }
+}
+
+.hero__text h1 {
+  font-weight: 300;
+  font-size: 2.31rem;
+  line-height: 1;
+  color: #2d314d;
+  margin-bottom: 1.5rem;
+}
+
+.hero__text p {
+  line-height: 1.5;
+  margin-bottom: 2.25rem;
 }
 /*# sourceMappingURL=style.css.map */

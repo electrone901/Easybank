@@ -22,6 +22,12 @@ body {
     }
 }
 
+h1,
+h2,
+h3 {
+    margin-top: 0;
+}
+
 // links
 a,
 a:visited,
@@ -31,8 +37,12 @@ a:hover {
 
 //  Spacing
 .container {
-    padding-left: 1.5rem;
+    max-width: 69.375rem;
+    margin: 0 auto;
+    padding-top: 2.25rem;
     padding-right: 1.5rem;
+    padding-bottom: 2.25rem;
+    padding-left: 1.5rem;
 }
 
 // Flexbox
@@ -52,6 +62,7 @@ a:hover {
 // Buttons
 button,
 .button {
+    display: inline-block;
     padding: 0.875rem 2.1875rem;
     background: linear-gradient(to right, $limeGreen, $brightcyan);
     border-radius: 50px;
@@ -59,6 +70,12 @@ button,
     cursor: pointer;
     color: white;
     font-weight: 400;
+    font-size: $font-sm;
+    color: white;
+    transition: opacity 300ms ease-in-out;
+    &:hover {
+        opacity: 0.75;
+    }
 }
 
 // Visibility
