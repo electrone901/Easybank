@@ -1,0 +1,28 @@
+.footer {
+    background-color: $darkBlue;
+    color: $white;
+    padding: 2.5rem;
+    text-align: center;
+    a {
+        color: $white;
+    }
+    &__logo {
+        margin-bottom: 1.875rem;
+        display: inline-block;
+    }
+    &__social {
+        margin-bottom: 1.875rem;
+    }
+    &__links {
+        &__col1 {}
+        &__col2 {
+            margin-bottom: 1.875rem;
+        }
+    }
+    &__cta {
+        a.button {
+            margin-bottom: 1.875rem;
+        }
+    }
+    &__copyright {}
+}
