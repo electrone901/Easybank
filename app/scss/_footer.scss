@@ -3,23 +3,59 @@
     color: $white;
     padding: 2.5rem;
     text-align: center;
+    @include breakpoint-up(large) {
+        display: grid;
+        //  We have 4 cols so: (3,  will take1fr) and 1 wil take 2fr
+        grid-template-columns: repeat(3, 1fr) 2fr;
+        // We have 2 rows takes 1fr
+        grid-template-rows: repeat(2, 1fr);
+        //  Representation of grid with names
+        grid-template-areas: 'logo links1 links2 cta' 'social links1 links2 cta';
+    }
     a {
         color: $white;
     }
     &__logo {
-        margin-bottom: 1.875rem;
         display: inline-block;
+        margin-bottom: 1.875rem;
+        @include breakpoint-up(large) {
+            // defines its name
+            grid-area: logo;
+        }
     }
     &__social {
         margin-bottom: 1.875rem;
+        @include breakpoint-up(large) {
+            grid-area: social;
+        }
+        a {
+            display: inline-block;
+        }
+        a:not(:last-child) {
+            margin-right: 1rem;
+        }
     }
     &__links {
-        &__col1 {}
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        line-height: 2.25;
+        &__col1 {
+            @include breakpoint-up(large) {
+                grid-area: links1;
+            }
+        }
         &__col2 {
             margin-bottom: 1.875rem;
+            @include breakpoint-up(large) {
+                grid-area: links2;
+            }
         }
     }
     &__cta {
+        @include breakpoint-up(large) {
+            grid-area: cta;
+        }
         a.button {
             margin-bottom: 1.875rem;
         }
