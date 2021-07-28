@@ -674,6 +674,11 @@ button:hover,
 
 .footer a {
   line-height: 2.25;
+  transition: color 150ms ease-in-out;
+}
+
+.footer a:hover {
+  color: #31d35c;
 }
 
 @media (min-width: 64em) {
