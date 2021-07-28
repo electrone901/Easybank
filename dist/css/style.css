@@ -583,8 +583,9 @@ button:hover,
   .footer {
     display: grid;
     grid-template-columns: repeat(3, 1fr) 2fr;
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-areas: 'logo links1 links2 cta' 'social links1 links2 cta';
+    grid-template-rows: 1fr auto;
+    grid-template-areas: 'logo links1 links2 cta' 'social links1 links2 copyright';
+    justify-items: start;
   }
 }
 
@@ -594,7 +595,12 @@ button:hover,
 
 .footer__logo {
   display: inline-block;
-  margin-bottom: 1.875rem;
+}
+
+@media (max-width: 63.9375em) {
+  .footer__logo {
+    margin-bottom: 1.875rem;
+  }
 }
 
 @media (min-width: 64em) {
@@ -603,18 +609,22 @@ button:hover,
   }
 }
 
-.footer__social {
-  margin-bottom: 1.875rem;
+@media (max-width: 63.9375em) {
+  .footer__social {
+    margin-bottom: 1.875rem;
+  }
 }
 
 @media (min-width: 64em) {
   .footer__social {
     grid-area: social;
+    align-self: end;
   }
 }
 
 .footer__social a {
   display: inline-block;
+  height: 1.25rem;
 }
 
 .footer__social a:not(:last-child) {
@@ -625,7 +635,14 @@ button:hover,
   display: flex;
   flex-direction: column;
   align-items: center;
-  line-height: 2.25;
+  font-size: 0.9375rem;
+}
+
+@media (min-width: 64em) {
+  .footer__links {
+    justify-content: space-between;
+    align-items: start;
+  }
 }
 
 @media (min-width: 64em) {
@@ -634,8 +651,10 @@ button:hover,
   }
 }
 
-.footer__links__col2 {
-  margin-bottom: 1.875rem;
+@media (max-width: 63.9375em) {
+  .footer__links__col2 {
+    margin-bottom: 1.875rem;
+  }
 }
 
 @media (min-width: 64em) {
@@ -644,13 +663,34 @@ button:hover,
   }
 }
 
+.footer a {
+  line-height: 2.25;
+}
+
 @media (min-width: 64em) {
   .footer__cta {
     grid-area: cta;
+    text-align: right;
+    justify-self: end;
   }
 }
 
-.footer__cta a.button {
-  margin-bottom: 1.875rem;
+@media (max-width: 63.9375em) {
+  .footer__cta a.button {
+    margin-bottom: 1.875rem;
+  }
+}
+
+.footer__copyright {
+  font-size: 0.8175rem;
+  color: #9698a6;
+}
+
+@media (min-width: 64em) {
+  .footer__copyright {
+    grid-area: copyright;
+    align-self: end;
+    justify-self: end;
+  }
 }
 /*# sourceMappingURL=style.css.map */

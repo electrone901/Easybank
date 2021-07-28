@@ -8,28 +8,35 @@
         //  We have 4 cols so: (3,  will take1fr) and 1 wil take 2fr
         grid-template-columns: repeat(3, 1fr) 2fr;
         // We have 2 rows takes 1fr
-        grid-template-rows: repeat(2, 1fr);
+        grid-template-rows: 1fr auto;
         //  Representation of grid with names
-        grid-template-areas: 'logo links1 links2 cta' 'social links1 links2 cta';
+        grid-template-areas: 'logo links1 links2 cta' 'social links1 links2 copyright';
+        justify-items: start;
     }
     a {
         color: $white;
     }
     &__logo {
         display: inline-block;
-        margin-bottom: 1.875rem;
+        @include breakpoint-down(medium) {
+            margin-bottom: 1.875rem;
+        }
         @include breakpoint-up(large) {
             // defines its name
             grid-area: logo;
         }
     }
     &__social {
-        margin-bottom: 1.875rem;
+        @include breakpoint-down(medium) {
+            margin-bottom: 1.875rem;
+        }
         @include breakpoint-up(large) {
             grid-area: social;
+            align-self: end;
         }
         a {
             display: inline-block;
+            height: 1.25rem;
         }
         a:not(:last-child) {
             margin-right: 1rem;
@@ -39,26 +46,48 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        line-height: 2.25;
+        font-size: 0.9375rem;
+        @include breakpoint-up(large) {
+            justify-content: space-between;
+            //  iUse align items when is going vertically
+            align-items: start;
+        }
         &__col1 {
             @include breakpoint-up(large) {
                 grid-area: links1;
             }
         }
         &__col2 {
-            margin-bottom: 1.875rem;
+            @include breakpoint-down(medium) {
+                margin-bottom: 1.875rem;
+            }
             @include breakpoint-up(large) {
                 grid-area: links2;
             }
         }
     }
+    a {
+        line-height: 2.25;
+    }
     &__cta {
         @include breakpoint-up(large) {
             grid-area: cta;
+            text-align: right;
+            justify-self: end;
         }
         a.button {
-            margin-bottom: 1.875rem;
+            @include breakpoint-down(medium) {
+                margin-bottom: 1.875rem;
+            }
         }
     }
-    &__copyright {}
+    &__copyright {
+        font-size: 0.8175rem;
+        color: $grayishBlue;
+        @include breakpoint-up(large) {
+            grid-area: copyright;
+            align-self: end;
+            justify-self: end;
+        }
+    }
 }
