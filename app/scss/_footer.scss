@@ -6,11 +6,12 @@
     @include breakpoint-up(large) {
         display: grid;
         //  We have 4 cols so: (3,  will take1fr) and 1 wil take 2fr
-        grid-template-columns: repeat(3, 1fr) 2fr;
+        grid-template-columns: 2fr 1fr 1fr 3fr;
         // We have 2 rows takes 1fr
         grid-template-rows: 1fr auto;
         //  Representation of grid with names
         grid-template-areas: 'logo links1 links2 cta' 'social links1 links2 copyright';
+        gap: 1rem;
         justify-items: start;
     }
     a {
@@ -37,6 +38,12 @@
         a {
             display: inline-block;
             height: 1.25rem;
+            svg path {
+                transition: fill 150ms ease-in-out;
+            }
+            &:hover svg path {
+                fill: $limeGreen;
+            }
         }
         a:not(:last-child) {
             margin-right: 1rem;

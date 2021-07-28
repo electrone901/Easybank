@@ -582,9 +582,10 @@ button:hover,
 @media (min-width: 64em) {
   .footer {
     display: grid;
-    grid-template-columns: repeat(3, 1fr) 2fr;
+    grid-template-columns: 2fr 1fr 1fr 3fr;
     grid-template-rows: 1fr auto;
     grid-template-areas: 'logo links1 links2 cta' 'social links1 links2 copyright';
+    gap: 1rem;
     justify-items: start;
   }
 }
@@ -625,6 +626,14 @@ button:hover,
 .footer__social a {
   display: inline-block;
   height: 1.25rem;
+}
+
+.footer__social a svg path {
+  transition: fill 150ms ease-in-out;
+}
+
+.footer__social a:hover svg path {
+  fill: #31d35c;
 }
 
 .footer__social a:not(:last-child) {
