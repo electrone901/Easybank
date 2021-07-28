@@ -4,7 +4,7 @@ This is a website for Easybank (Frontend Mentor) with optimal layouts for deskto
 
 ## Demo
 
-- [Home Page](https://clone-c6147.web.app/)
+- [Home Page](https://easybankking.netlify.app/)
   ![Main Page](https://raw.githubusercontent.com/electrone901/Easybank/main/images/webSite-screenshots/1.png) <br> <br>
 
 - Services
